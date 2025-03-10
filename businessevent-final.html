@@ -195,6 +195,98 @@
     .custom-justify {
         text-align: justify !important;
     }
+
+    .custom-accordion-row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1*var(--bs-gutter-y));
+        margin-right: calc(-0.5*var(--bs-gutter-x));
+        margin-left: calc(-0.5*var(--bs-gutter-x));
+        justify-content: center !important;
+    }
+
+    .custom-accordion-mb-2 {
+        margin-bottom: .5rem !important;
+    }
+
+    @media (min-width: 768px) {
+        .custom-accordion-col-md-8 {
+            flex: 0 0 auto;
+            width: 66.66666667%;
+        }
+    }
+
+    .custom-accordion-text-center {
+        text-align: center !important;
+    }
+
+    .custom-accordion-mx-auto {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+
+    /* Accordion Wrapper */
+    .accordion {
+        max-width: 1000px;
+    }
+
+    /* Hide the input checkbox */
+    .accordion input {
+        display: none;
+    }
+
+    /* Style for labels (headers) */
+    .accordion label {
+        display: block;
+        font-weight: bold;
+        padding: 15px;
+        cursor: pointer;
+        background: transparent;
+        position: relative;
+        transition: color 0.3s;
+    }
+
+    /* Change text color on hover */
+    .accordion label:hover {
+        color: #007bff;
+    }
+
+    /* Add an arrow indicator */
+    .accordion label::after {
+        content: "\25BE";
+        /* Downward arrow */
+        position: absolute;
+        right: 20px;
+        transition: transform 0.3s;
+    }
+
+    /* Rotate arrow when active */
+    .accordion input:checked+label::after {
+        transform: rotate(180deg);
+    }
+
+    /* Style for content */
+    .accordion .content {
+        max-height: 0;
+        overflow: hidden;
+        background: transparent;
+        transition: max-height 0.3s ease-in-out;
+        padding: 0 15px;
+    }
+
+    /* Show content when checkbox is checked */
+    .accordion input:checked+label+.content {
+        max-height: 500px;
+        padding: 15px;
+    }
+
+    /* Reduce spacing between lines inside the accordion */
+    .accordion .content p {
+        margin: 5px 0;
+        line-height: 1.2;
+    }
 </style>
 
 
@@ -868,9 +960,9 @@
         </div>
     </section>
     <section>
-        <div class="container py-3 py-xl-4">
-            <div class="row mb-2">
-                <div class="col-md-8 mx-auto">
+        <div class="container py-3 py-xl-5">
+            <div class="row">
+                <div class="col-md-10 mx-auto text-center">
                     <h1 class="fw-bold mb-5">Our&nbsp;<span class="pb-3 underline">Services</span></h1>
                     <p class="mb-5 custom-justify">Discover our range of services designed to create unforgettable
                         experiences. From event planning and interactive entertainment to technical support and custom
@@ -879,124 +971,123 @@
                 </div>
             </div>
             <div class="custom-accordion-row custom-accordion-mb-2">
-                <div class="custom-accordion-col-md-8 custom-accordion-mx-auto">
-                    <div class="accordion">
-                        <input type="checkbox" id="section1">
-                        <label for="section1">Event Planning & Coordination</label>
-                        <div class="content">
-                            <p>Event concept development</p>
-                            <p>Venue selection and management</p>
-                            <p>Budget management and cost control</p>
-                            <p>Vendor sourcing and coordination</p>
-                            <p>Timeline creation and tracking</p>
-                            <p>Guest list management</p>
-                            <p>Event registration and check-in support</p>
-                            <p>On-site event coordination</p>
-                            <p>Post-event feedback collection and analysis</p>
-                            <p>Risk management and contingency planning</p>
-                        </div>
+                <div class="custom-accordion-col-md-8 custom-accordion-mx-auto accordion">
 
-                        <input type="checkbox" id="section2">
-                        <label for="section2">Game Master & Manpower Support</label>
-                        <div class="content">
-                            <p>Event staffing (host, guide, support)</p>
-                            <p>On-site game facilitation</p>
-                            <p>Troubleshooting and problem resolution during the event</p>
-                            <p>Player engagement and assistance</p>
-                            <p>Game rule explanation and guidance</p>
-                            <p>Game flow management</p>
-                            <p>Event-day coordination for large groups</p>
-                            <p>Event evaluation and feedback for staff performance</p>
-                        </div>
+                    <input type="checkbox" id="section1">
+                    <label for="section1">Event Planning & Coordination</label>
+                    <div class="content">
+                        <p>Event concept development</p>
+                        <p>Venue selection and management</p>
+                        <p>Budget management and cost control</p>
+                        <p>Vendor sourcing and coordination</p>
+                        <p>Timeline creation and tracking</p>
+                        <p>Guest list management</p>
+                        <p>Event registration and check-in support</p>
+                        <p>On-site event coordination</p>
+                        <p>Post-event feedback collection and analysis</p>
+                        <p>Risk management and contingency planning</p>
+                    </div>
 
-                        <input type="checkbox" id="section3">
-                        <label for="section3">Creative Services</label>
-                        <div class="content">
-                            <p>Event Photography & Videography</p>
-                            <p>Instant Photo Printing</p>
-                            <p>Custom graphic design (event branding, posters, etc.)</p>
-                            <p>3D modeling and animation for presentations</p>
-                            <p>Event theme development</p>
-                            <p>Branding and logo creation</p>
-                            <p>Social Media Marketing</p>
-                            <p>Interactive installations and projections</p>
-                            <p>Custom event decor and set design</p>
-                            <p>Video production (for event recaps or promotional content)</p>
-                            <p>Interactive mobile app development for events</p>
-                        </div>
+                    <input type="checkbox" id="section2">
+                    <label for="section2">Game Master & Manpower Support</label>
+                    <div class="content">
+                        <p>Event staffing (host, guide, support)</p>
+                        <p>On-site game facilitation</p>
+                        <p>Troubleshooting and problem resolution during the event</p>
+                        <p>Player engagement and assistance</p>
+                        <p>Game rule explanation and guidance</p>
+                        <p>Game flow management</p>
+                        <p>Event-day coordination for large groups</p>
+                        <p>Event evaluation and feedback for staff performance</p>
+                    </div>
 
-                        <input type="checkbox" id="section4">
-                        <label for="section4">Interactive Experience</label>
-                        <div class="content">
-                            <p>Virtual reality (VR) experiences</p>
-                            <p>Augmented reality (AR) games and installations</p>
-                            <p>Escape room challenges</p>
-                            <p>Live VR Gameplay Casting</p>
-                            <p>Interactive product displays</p>
-                            <p>Gamified learning experiences</p>
-                            <p>Green Screen Live VR Gameplay Montage</p>
-                        </div>
+                    <input type="checkbox" id="section3">
+                    <label for="section3">Creative Services</label>
+                    <div class="content">
+                        <p>Event Photography & Videography</p>
+                        <p>Instant Photo Printing</p>
+                        <p>Custom graphic design (event branding, posters, etc.)</p>
+                        <p>3D modeling and animation for presentations</p>
+                        <p>Event theme development</p>
+                        <p>Branding and logo creation</p>
+                        <p>Social Media Marketing</p>
+                        <p>Interactive installations and projections</p>
+                        <p>Custom event decor and set design</p>
+                        <p>Video production (for event recaps or promotional content)</p>
+                        <p>Interactive mobile app development for events</p>
+                    </div>
 
-                        <input type="checkbox" id="section5">
-                        <label for="section5">Logistic & Set Up</label>
-                        <div class="content">
-                            <p>Equipment transportation</p>
-                            <p>Equipment rental (AV, furniture, etc.)</p>
-                            <p>Game equipment arrangement setup</p>
-                            <p>Themed Decoration & Staging</p>
-                            <p>Catering and food service setup</p>
-                            <p>Lighting setup and design</p>
-                            <p>Audio and video equipment installation</p>
-                            <p>Custom signage and banners</p>
-                            <p>Registration desk and welcome area setup</p>
-                            <p>Audio and visual system setup and management</p>
-                        </div>
+                    <input type="checkbox" id="section4">
+                    <label for="section4">Interactive Experience</label>
+                    <div class="content">
+                        <p>Virtual reality (VR) experiences</p>
+                        <p>Augmented reality (AR) games and installations</p>
+                        <p>Escape room challenges</p>
+                        <p>Live VR Gameplay Casting</p>
+                        <p>Interactive product displays</p>
+                        <p>Gamified learning experiences</p>
+                        <p>Green Screen Live VR Gameplay Montage</p>
+                    </div>
 
-                        <input type="checkbox" id="section6">
-                        <label for="section6">Technical Support</label>
-                        <div class="content">
-                            <p>On-site IT support for event technology</p>
-                            <p>Live streaming and broadcasting support</p>
-                            <p>Event app management and troubleshooting</p>
-                            <p>Internet and Wi-Fi access setup</p>
-                            <p>VR and AR equipment support</p>
-                            <p>Device charging stations</p>
-                            <p>Troubleshooting interactive installations</p>
-                            <p>Backup power solutions</p>
-                        </div>
+                    <input type="checkbox" id="section5">
+                    <label for="section5">Logistic & Set Up</label>
+                    <div class="content">
+                        <p>Equipment transportation</p>
+                        <p>Equipment rental (AV, furniture, etc.)</p>
+                        <p>Game equipment arrangement setup</p>
+                        <p>Themed Decoration & Staging</p>
+                        <p>Catering and food service setup</p>
+                        <p>Lighting setup and design</p>
+                        <p>Audio and video equipment installation</p>
+                        <p>Custom signage and banners</p>
+                        <p>Registration desk and welcome area setup</p>
+                        <p>Audio and visual system setup and management</p>
+                    </div>
 
-                        <input type="checkbox" id="section7">
-                        <label for="section7">Attendee Engagement & Management</label>
-                        <div class="content">
-                            <p>Attendance recording and management</p>
-                            <p>VR event tutorials and walkthroughs</p>
-                        </div>
+                    <input type="checkbox" id="section6">
+                    <label for="section6">Technical Support</label>
+                    <div class="content">
+                        <p>On-site IT support for event technology</p>
+                        <p>Live streaming and broadcasting support</p>
+                        <p>Event app management and troubleshooting</p>
+                        <p>Internet and Wi-Fi access setup</p>
+                        <p>VR and AR equipment support</p>
+                        <p>Device charging stations</p>
+                        <p>Troubleshooting interactive installations</p>
+                        <p>Backup power solutions</p>
+                    </div>
 
-                        <input type="checkbox" id="section8">
-                        <label for="section8">Safety & Accessibility</label>
-                        <div class="content">
-                            <p>Event safety protocols and emergency planning</p>
-                            <p>Crowd management strategies</p>
-                            <p>VR & Racing Simulation Equipment safety plan</p>
-                        </div>
+                    <input type="checkbox" id="section7">
+                    <label for="section7">Attendee Engagement & Management</label>
+                    <div class="content">
+                        <p>Attendance recording and management</p>
+                        <p>VR event tutorials and walkthroughs</p>
+                    </div>
 
-                        <input type="checkbox" id="section9">
-                        <label for="section9">Custom Gaming Content Creation</label>
-                        <div class="content">
-                            <p>Custom VR or AR game development</p>
-                            <p>Custom VR video development</p>
-                            <p>Interactive game design tailored to event themes</p>
-                        </div>
+                    <input type="checkbox" id="section8">
+                    <label for="section8">Safety & Accessibility</label>
+                    <div class="content">
+                        <p>Event safety protocols and emergency planning</p>
+                        <p>Crowd management strategies</p>
+                        <p>VR & Racing Simulation Equipment safety plan</p>
+                    </div>
 
-                        <input type="checkbox" id="section10">
-                        <label for="section10">Post-Event Service</label>
-                        <div class="content">
-                            <p>Post-event surveys and satisfaction reports</p>
-                            <p>Event highlights videos and photo galleries</p>
-                            <p>Social media recap and content sharing</p>
-                            <p>Event performance report (attendance, engagement, ROI)</p>
-                            <p>Clean-up and venue restoration post-event</p>
-                        </div>
+                    <input type="checkbox" id="section9">
+                    <label for="section9">Custom Gaming Content Creation</label>
+                    <div class="content">
+                        <p>Custom VR or AR game development</p>
+                        <p>Custom VR video development</p>
+                        <p>Interactive game design tailored to event themes</p>
+                    </div>
+
+                    <input type="checkbox" id="section10">
+                    <label for="section10">Post-Event Service</label>
+                    <div class="content">
+                        <p>Post-event surveys and satisfaction reports</p>
+                        <p>Event highlights videos and photo galleries</p>
+                        <p>Social media recap and content sharing</p>
+                        <p>Event performance report (attendance, engagement, ROI)</p>
+                        <p>Clean-up and venue restoration post-event</p>
                     </div>
                 </div>
             </div>
