@@ -13,10 +13,39 @@
 }
 */
 
+.custom-accordion-row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1*var(--bs-gutter-y));
+  margin-right: calc(-0.5*var(--bs-gutter-x));
+  margin-left: calc(-0.5*var(--bs-gutter-x));
+}
+
+.custom-accordion-mb-2 {
+  margin-bottom: .5rem !important;
+}
+
+@media (min-width: 768px) {
+  .custom-accordion-col-md-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+}
+
+.custom-accordion-text-center {
+  text-align: center !important;
+}
+
+.custom-accordion-mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
 /* Accordion Wrapper */
 .accordion {
-  width: 100%;
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 /* Hide the input checkbox */

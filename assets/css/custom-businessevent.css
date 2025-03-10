@@ -2,6 +2,9 @@
   display: none;
 }
 
+.custom-button {
+}
+
 .custom-general-button {
   --bs-btn-padding-x: 1.5rem;
   --bs-btn-padding-y: 0.5rem;
@@ -35,7 +38,7 @@
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: var(--bs-btn-border-radius);
   background-color: var(--bs-btn-bg);
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .custom-button-secondary {
@@ -105,3 +108,8 @@
   --bs-btn-disabled-bg: #f5f6f8;
   --bs-btn-disabled-border-color: #f5f6f8;
 }
+
+.custom-justify {
+  text-align: justify;
+}
+
