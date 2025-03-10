@@ -1,0 +1,76 @@
+/*
+.container {
+  width: 90%;
+  max-width: 800px;
+  height: 80vh;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-radius: 10px;
+  padding: 20px;
+}
+*/
+
+/* Accordion Wrapper */
+.accordion {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Hide the input checkbox */
+.accordion input {
+  display: none;
+}
+
+/* Style for labels (headers) */
+.accordion label {
+  display: block;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+  background: transparent;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* Change text color on hover */
+.accordion label:hover {
+  color: #007bff;
+}
+
+/* Add an arrow indicator */
+.accordion label::after {
+  content: "\25BE";
+  /* Downward arrow */
+  position: absolute;
+  right: 20px;
+  transition: transform 0.3s;
+}
+
+/* Rotate arrow when active */
+.accordion input:checked+label::after {
+  transform: rotate(180deg);
+}
+
+/* Style for content */
+.accordion .content {
+  max-height: 0;
+  overflow: hidden;
+  background: transparent;
+  transition: max-height 0.3s ease-in-out;
+  padding: 0 15px;
+}
+
+/* Show content when checkbox is checked */
+.accordion input:checked+label+.content {
+  max-height: 500px;
+  padding: 15px;
+}
+
+/* Reduce spacing between lines inside the accordion */
+.accordion .content p {
+  margin: 5px 0;
+  line-height: 1.2;
+}
